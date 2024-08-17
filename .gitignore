@@ -13,3 +13,5 @@
 *.pem
 
 *IaC-*
+
+*hosts*
