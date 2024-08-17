@@ -10,4 +10,4 @@
 *.tfstate.*
 
 *.pem
-Iac-*
+*Iac-*
