@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=terraform
 
 ### Terraform ###
-# Local.terraform directories
+# Local .terraform directories
 **/.terraform/*
 *.terraform*
 
@@ -11,4 +11,5 @@
 *.tfstate.*
 
 *.pem
+
 *IaC-*
