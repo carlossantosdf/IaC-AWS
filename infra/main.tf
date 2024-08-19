@@ -10,19 +10,22 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
+  region  = var.regiao_aws
 }
 
 resource "aws_instance" "app_server" {
   ami           = "ami-0aff18ec83b712f05"
-  instance_type = "t2.micro"
-  key_name = "IaC-AWS"
+  instance_type = var.instancia
+  key_name = var.chave
   
   tags = {
     Name = "Terraform Ansible Pynthon"
   }
 }
 resource "aws_key_pair" "chaveSSH" {
-  key_name = "IaC-dev"
-  public_key = file("IaC-dev.pub")
+  key_name = var.chave
+  public_key = file("${var.chave}.pub")
+}
+output "IP_publico" {
+  value = aws_instance.app_server.public_ip
 }
