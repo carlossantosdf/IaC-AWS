@@ -24,3 +24,7 @@
       regexp: 'ALLOWED_HOSTS'
       line: 'ALLOWED_HOSTS = ["*"]'
       backrefs: yes
+  - name: configurando o banco de dados
+    shell: '. /home/ubuntu/tcc/venv/bin/activate; python /home/ubuntu/tcc/manage.py migrate'
+  - name: carregando os dados iniciais
+    shell: '. /home/ubuntu/tcc/venv/bin/activate; python /home/ubuntu/tcc/manage.py loaddata clientes.json'
