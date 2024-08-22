@@ -21,6 +21,7 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "Terraform Ansible Pynthon"
   }
+  security_groups = [ var.grupo ]
 }
 resource "aws_key_pair" "chaveSSH" {
   key_name = var.chave
